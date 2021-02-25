@@ -6,6 +6,7 @@
     "build_directory": "builds",
     "cpus": "2",
     "disk_size": "65536",
+    "description": "Fedora Desktop",
     "guest_additions_url": "",
     "headless": "false",
     "http_directory": "http",
@@ -13,13 +14,17 @@
     "https_proxy": "{{ env `HTTPS_PROXY` }}",
     "iso_checksum_url": "https://mirror.telepoint.bg/fedora/releases/33/Server/x86_64/iso/Fedora-Server-33-1.2-x86_64-CHECKSUM",
     "iso_name": "Fedora-Server-dvd-x86_64-33-1.2.iso",
+    "iso_version": "33",
     "ks_path": "kickstarter-f33.cfg",
     "memory": "1024",
     "mirror": "http://download.fedoraproject.org/pub/fedora/linux",
     "mirror_directory": "releases/33/Server/x86_64/iso",
     "name": "fedora-33",
     "no_proxy": "{{env `no_proxy`}}",
-    "template": "fedora-33-x86_64"
+    "template": "fedora-33-x86_64",
+    "vagrantup_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
+    "vagrantup_user": "ProfessorManhattan",
+
   },
     "builders": [
       {
@@ -51,7 +56,15 @@
       {
         "output": "build/{{ user `box_basename` }}.{{ .Provider }}.box",
         "type": "vagrant"
+      },
+       {
+        "type": "vagrant-cloud",
+        "access_token": "{{ user `vagrantup_token` }}",
+        "box_tag": "{{ user `vagrantup_user` }}/{{ user `box_basename` }}",
+        "version_description": "{{ user `description` }} version {{ user `iso_version` }}",
+        "version": "{{ user `iso_version` }}"
       }
+
     ],
     "provisioners": [
       {
@@ -71,7 +84,6 @@
           "scripts/virtualbox.sh", 
           "scripts/vagrant.sh",
           "scripts/real-tmp.sh",
-          "scripts/gnome-desktop.sh",
           "scripts/cleanup.sh" 
         ],
         "type": "shell"
