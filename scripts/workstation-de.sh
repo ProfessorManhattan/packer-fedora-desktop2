@@ -2,7 +2,7 @@
 # This is needed because auto unattend installation with kickstarter file is not supported
 
 # Install the Workstation group
-sudo yum groupinstall "Fedora Workstation" --skip-broken -yum
+sudo yum groupinstall "Fedora Workstation" --skip-broken -y
 
 # Change systemd to start graphical mode
 sudo systemctl set-default graphical.target
