@@ -84,6 +84,7 @@
           "scripts/virtualbox.sh", 
           "scripts/vagrant.sh",
           "scripts/real-tmp.sh",
+          "scripts/workstation-de.sh",
           "scripts/cleanup.sh" 
         ],
         "type": "shell"
