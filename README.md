@@ -1,7 +1,8 @@
 **Base Fedora Desktop**
+
 This repository contains the files necessary for building minimal Fedora desktop VM images for the following virtualization platforms:
 
-_Currently: _
+_Currently:_
 VirtualBox
 
 _Upcoming providers:_
