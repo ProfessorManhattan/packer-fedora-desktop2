@@ -17,6 +17,7 @@
     "iso_url": "https://mirror.arizona.edu/fedora/linux/releases/33/Server/x86_64/iso/Fedora-Server-dvd-x86_64-33-1.2.iso",
     "iso_version": "33.1.2",
     "kickstarter_path": "kickstarter.cfg",
+    "latestos_tag": "fedora",
     "memory": "2048",
     "no_proxy": "{{ env `NO_PROXY` }}",
     "qemuargs_opt": "-m",
