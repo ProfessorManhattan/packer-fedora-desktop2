@@ -87,6 +87,8 @@ If you have VirtualBox and Vagrant installed, you can quickly spin up the finish
 vagrant up
 ```
 
+The default username and password are both *vagrant*.
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#creating-your-own-box)
 
