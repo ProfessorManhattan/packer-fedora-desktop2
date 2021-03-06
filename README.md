@@ -1,4 +1,4 @@
-<!-- ⚠️ This README has been generated from the file(s) "./modules/docs/blueprint-readme.md" ⚠️--><h1 align="center" style="text-align:center;">Packer Template: Fedora Desktop</h1>
+<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-readme.md" ⚠️--><h1 align="center" style="text-align:center;">Packer Template: Fedora Desktop</h1>
 
 <div align="center">
   <h4>
