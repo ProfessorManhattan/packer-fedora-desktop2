@@ -168,7 +168,7 @@
           "scripts/parallels.sh",
           "scripts/vagrant.sh",
           "scripts/real-tmp.sh",
-          "scripts/desktop.sh",
+          "scripts/desktop.custom.sh",
           "scripts/cleanup.sh"
         ],
         "type": "shell"

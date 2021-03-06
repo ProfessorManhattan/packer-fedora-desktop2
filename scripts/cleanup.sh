@@ -1,1 +1,1 @@
-../modules/bento/packer_templates/fedora/scripts/cleanup.sh
+../.modules/bento/packer_templates/fedora/scripts/cleanup.sh
