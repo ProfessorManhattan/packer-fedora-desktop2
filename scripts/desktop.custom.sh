@@ -1,5 +1,4 @@
-# Workstation installation script for Fedora 33 server edition
-# This is needed because auto unattend installation with kickstarter file is not supported
+#!/bin/bash
 
 # Install the Workstation group
 sudo yum groupinstall "Fedora Workstation" --skip-broken -y
