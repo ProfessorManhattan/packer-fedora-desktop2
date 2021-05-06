@@ -1,4 +1,7 @@
-<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-contributing.md" ⚠️--><h1 align="center" style="text-align:center;">Contributing</h1>
+<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-contributing.md" ⚠️-->
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#contributing)
+
+# ➤ Contributing
 
 First of all, thanks for visiting this page 😊 ❤️ ! We are totally ecstatic that you may be considering contributing to this project. You should read this guide if you are considering creating a pull request.
 
@@ -7,23 +10,24 @@ First of all, thanks for visiting this page 😊 ❤️ ! We are totally ecstati
 
 ## ➤ Table of Contents
 
-* [➤ Code of Conduct](#-code-of-conduct)
-* [➤ Overview](#-overview)
-	* [Virtualization Platforms](#virtualization-platforms)
-* [➤ Philosophy](#-philosophy)
-* [➤ Getting Started](#-getting-started)
-	* [NPM Tasks Available](#npm-tasks-available)
-* [➤ Pull Requests](#-pull-requests)
-	* [How to Commit Code](#how-to-commit-code)
-	* [Pre-Commit Hook](#pre-commit-hook)
-* [➤ Formatting the Template](#-formatting-the-template)
-	* [Conversion to HCL](#conversion-to-hcl)
+* [➤ Contributing](#contributing)
+	* [➤ Code of Conduct](#code-of-conduct)
+	* [➤ Overview](#overview)
+		* [Virtualization Platforms](#virtualization-platforms)
+	* [➤ Philosophy](#philosophy)
+	* [➤ Getting Started](#getting-started)
+		* [NPM Tasks Available](#npm-tasks-available)
+	* [➤ Pull Requests](#pull-requests)
+		* [How to Commit Code](#how-to-commit-code)
+		* [Pre-Commit Hook](#pre-commit-hook)
+	* [➤ Formatting the Template](#formatting-the-template)
+		* [Conversion to HCL](#conversion-to-hcl)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#code-of-conduct)
 
 ## ➤ Code of Conduct
 
-This project and everyone participating in it is governed by the [Code of Conduct](https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [help@megabyte.space](mailto:help@megabyte.space).
+This project and everyone participating in it is governed by the [Code of Conduct](https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/blob/master/CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [help@megabyte.space](mailto:help@megabyte.space).
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#overview)
@@ -126,7 +130,7 @@ According to the help menu above, `npm run build` will run the `build` step desc
 
 ## ➤ Pull Requests
 
-All pull requests should be associated with issues. You can find the [issues board on GitLab](https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/issues). The pull requests should be made to [the GitLab repository](https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop) instead of the [GitHub repository](https://github.com/ProfessorManhattan/packer-Base-Fedora-Desktop). This is because we use GitLab as our primary repository and mirror the changes to GitHub for the community.
+All pull requests should be associated with issues. You can find the [issues board on GitLab](https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/issues). The pull requests should be made to [the GitLab repository](https://gitlab.com/megabyte-space/packer/Fedora-Desktop) instead of the [GitHub repository](https://github.com/ProfessorManhattan/packer-Fedora-Desktop). This is because we use GitLab as our primary repository and mirror the changes to GitHub for the community.
 
 ### How to Commit Code
 

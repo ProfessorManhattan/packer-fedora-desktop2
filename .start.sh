@@ -4,7 +4,7 @@
 # installed and then copies over base files from the modules. It also generates the
 # documentation and performs other miscellaneous tasks.
 
-set -ex
+set -e
 
 curl -sL https://git.io/_has | bash -s docker git jq node npm wget
 export REPO_TYPE=packer

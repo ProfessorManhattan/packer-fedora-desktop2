@@ -24,7 +24,7 @@
 	branch = master
 [submodule ".modules/docs"]
 	path = .modules/docs
-	url = https://gitlab.com/megabyte-space/documentation/packer.git
+	url = https://gitlab.com/megabyte-labs/documentation/packer.git
 	branch = master
 [submodule ".modules/shared"]
 	path = .modules/shared

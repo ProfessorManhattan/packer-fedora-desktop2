@@ -1,26 +1,27 @@
-<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-readme.md" ⚠️--><h1 align="center" style="text-align:center;">Packer Template: Fedora Desktop</h1>
+<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-readme.md" ⚠️-->
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#packer-template--variablesdescription-)
 
-<div align="center">
-  <h4>
-    <a href="https://app.vagrantup.com/ProfessorManhattan">VagrantUp Profile</a>
-    <span> | </span>
-    <a href="https://app.vagrantup.com/ProfessorManhattan/boxes/Base-Fedora-Desktop">VagrantUp Box</a>
-    <span> | </span>
-    <a href="https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/blob/master/CONTRIBUTING.md">Contributing</a>
-    <span> | </span>
-    <a href="https://app.slack.com/client/T01ABCG4NK1/C01NN74H0LW/details/">Chat</a>
-    <span> | </span>
-    <a href="https://megabyte.space">Website</a>
-  </h4>
-</div>
-<p style="text-align:center;">
-  <a href="https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop">
+# ➤ Packer Template: Fedora Desktop
+
+<h4>
+  <a href="https://app.vagrantup.com/ProfessorManhattan">VagrantUp Profile</a>
+  <span> | </span>
+  <a href="https://app.vagrantup.com/ProfessorManhattan/boxes/Fedora-Desktop">VagrantUp Box</a>
+  <span> | </span>
+  <a href="https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/blob/master/CONTRIBUTING.md">Contributing</a>
+  <span> | </span>
+  <a href="https://app.slack.com/client/T01ABCG4NK1/C01NN74H0LW/details/">Chat</a>
+  <span> | </span>
+  <a href="https://megabyte.space">Website</a>
+</h4>
+<p>
+  <a href="https://gitlab.com/megabyte-space/packer/Fedora-Desktop">
     <img alt="Version" src="https://img.shields.io/badge/version-33.1.2-blue.svg?cacheSeconds=2592000" />
   </a>
   <a href="https://megabyte.space/docs/packer" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/raw/master/LICENSE" target="_blank">
+  <a href="https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/raw/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
   <a href="https://twitter.com/PrfssrManhattan" target="_blank">
@@ -28,23 +29,22 @@
   </a>
 </p>
 
-<p align="center" style="text-align:center;">
-  <b>A Packer project that builds a minimal, compact, and performant VagrantUp Fedora Desktop boxes</b></br>
-</p>
+> <br/>**A Packer project that builds minimal, compact, and performant VagrantUp Fedora Desktop boxes**</br></br>
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#table-of-contents)
 
 ## ➤ Table of Contents
 
-* [➤ Overview](#-overview)
-	* [Supported Virtualization Platforms](#supported-virtualization-platforms)
-* [➤ Requirements](#-requirements)
-* [➤ Quick Start](#-quick-start)
-* [➤ Creating Your Own Box](#-creating-your-own-box)
-* [➤ Updating Your Box](#-updating-your-box)
-* [➤ Contributing](#-contributing)
-* [➤ License](#-license)
+* [➤ Packer Template: Fedora Desktop](#packer-template-fedora-desktop)
+	* [➤ Overview](#overview)
+		* [Supported Virtualization Platforms](#supported-virtualization-platforms)
+	* [➤ Requirements](#requirements)
+	* [➤ Quick Start](#quick-start)
+	* [➤ Creating Your Own Box](#creating-your-own-box)
+	* [➤ Updating Your Box](#updating-your-box)
+	* [➤ Contributing](#contributing)
+	* [➤ License](#license)
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png)](#overview)
 
@@ -52,7 +52,7 @@
 
 This repository contains the source code used to automatically build minimal Fedora Desktop VM images. The build process closely imitates the same process used by [chef/bento](https://github.com/chef/bento). In fact, you will see that most of the `scripts/` folder is symlinked to a chef/bento submodule.
 
-This repository automates most of the process of keeping our [Fedora Desktop VM images](https://app.vagrantup.com/ProfessorManhattan/boxes/Base-Fedora-Desktop) up-to-date with the latest upstream source by:
+This repository automates most of the process of keeping our [Fedora Desktop VM images](https://app.vagrantup.com/ProfessorManhattan/boxes/Fedora-Desktop) up-to-date with the latest upstream source by:
 
 * Using the vagrant-cloud post-processor to automatically upload the box after it is built
 * Automating the retrieval of the source ISO file and checksum file by using another project of ours called [LatestOS](https://pypi.org/project/latestos/)
@@ -75,7 +75,7 @@ Please note that not all of [our Packer projects](https://gitlab.com/megabyte-sp
 
 ## ➤ Requirements
 
-* At least one of the above virtualization platforms installed ([VirtualBox]((https://gitlab.com/megabyte-space/ansible-roles/virtualbox)) is a good starting point if you do not already have one of the platforms installed)
+* At least one of the above virtualization platforms installed ([VirtualBox](https://gitlab.com/megabyte-space/ansible-roles/virtualbox) is a good starting point if you do not already have one of the platforms installed)
 * [Packer](https://gitlab.com/megabyte-space/ansible-roles/packer)
 * [Vagrant](https://gitlab.com/megabyte-space/ansible-roles/vagrant)
 
@@ -99,7 +99,7 @@ The default username and password are both *vagrant*.
 
 You can quickly use this project to create your own minimal Fedora Desktop box by:
 
-1. Creating a box on VagrantUp titled Base-Fedora-Desktop - *Note: You can change the title by modifying the `"box_basename"` variable in `template.json`*
+1. Creating a box on VagrantUp titled Fedora-Desktop - *Note: You can change the title by modifying the `"box_basename"` variable in `template.json`*
 2. Changing the `"vagrantup_user"` variable in `template.json` to your VagrantUp username
 3. Acquiring a VagrantUp API token from the settings page
 4. Running the following code
@@ -134,7 +134,7 @@ packer build -only=virtualbox-iso template.json
 
 ## ➤ Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/issues). If you would like to contribute, please take a look at the [contributing guide](https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/blob/master/CONTRIBUTING.md).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/issues). If you would like to contribute, please take a look at the [contributing guide](https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/blob/master/CONTRIBUTING.md).
 
 <details>
 <summary>Sponsorship</summary>
@@ -158,5 +158,5 @@ I create open source projects out of love. Although I have a job, shelter, and a
 
 ## ➤ License
 
-Copyright © 2021 [Megabyte LLC](https://megabyte.space). This project is [MIT](https://gitlab.com/megabyte-space/packer/Base-Fedora-Desktop/-/raw/master/LICENSE) licensed.
+Copyright © 2021 [Megabyte LLC](https://megabyte.space). This project is [MIT](https://gitlab.com/megabyte-space/packer/Fedora-Desktop/-/raw/master/LICENSE) licensed.
 
