@@ -1,5 +1,5 @@
 {
-    "variables": {
+   "variables": {
         "boot_command": "<up><wait><tab> inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `kickstarter_path` }}<enter><wait>",
         "boot_wait": "5s",
         "box_basename": "Fedora-Desktop",
