@@ -1,7 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-
 Vagrant.configure("2") do |config|  
   config.ssh.insert_key = false
   config.ssh.password="vagrant"  
@@ -11,16 +10,16 @@ Vagrant.configure("2") do |config|
   config.vm.box_version = "34.1.2"
   config.vm.name = "Fedora 34.1.2 Desktop"
   config.vm.define "fedora" do |fedora|
-   fedora.vm.hostname = "vagrant-fedora"
-   fedora.vm.network "private_network",
+    fedora.vm.hostname = "vagrant-fedora"
+    fedora.vm.network "private_network",
       ip: "172.24.24.3",
       netmask: "255.255.255.0"
-   fedora.vm.provider "hyperv" do |v|
+    fedora.vm.provider "hyperv" do |v|
       v.cpus = 2
       v.maxmemory = 4096
       v.linked_clone = true
-   end
-   fedora.vm.provider :libvirt do |libvirt, override|
+    end
+    fedora.vm.provider :libvirt do |libvirt, override|
       libvirt.cpus = 2
       libvirt.memory = 4096      
 
@@ -40,8 +39,8 @@ Vagrant.configure("2") do |config|
       libvirt.hyperv_feature :name => 'relaxed', :state => 'on'
       libvirt.hyperv_feature :name => 'vapic',   :state => 'on'
       libvirt.hyperv_feature :name => 'synic',   :state => 'on'
-   end
-   fedora.vm.provider "virtualbox" do |vb|
+    end
+    fedora.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--vram", "128"]
       vb.customize ["modifyvm", :id, "--graphicscontroller", "vmsvga"]
       # Enable the use of hardware virtualization extensions (Intel VT-x or AMD-V) in the processor of your host system
@@ -51,8 +50,8 @@ Vagrant.configure("2") do |config|
       vb.memory = 4096
       vb.cpus = 2
       vb.check_guest_additions = true  	
-   end
-   fedora.vm.provider "vmware_workstation" do |v|
+    end
+    fedora.vm.provider "vmware_workstation" do |v|
       v.gui = true
       v.vmx["memsize"] = "4096"
       v.vmx["numvcpus"] = "2"
@@ -63,6 +62,6 @@ Vagrant.configure("2") do |config|
       v.enable_vmrun_ip_lookup = false
       v.whitelist_verified = true
       v.vmx["hgfs.linkRootShare"] = "FALSE"
-   end
-  end  
+    end
+  end
 end
