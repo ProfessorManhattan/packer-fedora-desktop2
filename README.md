@@ -1,5 +1,9 @@
 <!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-readme.md" ⚠️-->\<div align="center">
-  <center><img alt="Fedora Workstation 34 logo" src="./logo.png" /></center>
+  <center>
+    <a href="https://gitlab.com/megabyte-labs/packer/fedora-desktop" title="{{ variables.description GitLab page" target="_blank">
+      <img width="140" height="140" alt="Fedora Workstation 34 logo" src="./logo.png" />
+    </a>
+  </center>
 </div>
 <div align="center">
   <center><h1 align="center">Packer Template: Fedora Workstation 34</h1></center>
@@ -10,7 +14,7 @@
     <a href="https://megabyte.space" title="Megabyte Labs homepage" target="_blank">
       <img src="https://gitlab.com/megabyte-labs/assets/-/raw/master/svg/home-solid.svg" />
     </a>
-    <a href="https://app.vagrantup.com/Megabyte/boxes/Fedora-Desktop" title="Fedora Workstation 34 role on VagrantUp.com" target="_blank">
+    <a href="https://app.vagrantup.com/Megabyte/boxes/Fedora-Desktop" title="Fedora Workstation 34 box on VagrantUp.com" target="_blank">
       <img height="50" src="https://gitlab.com/megabyte-labs/assets/-/raw/master/svg/vagrant.svg" />
     </a>
     <a href="https://gitlab.com/megabyte-labs/packer/fedora-desktop/-/blob/master/CONTRIBUTING.md" title="Learn about contributing" target="_blank">
@@ -40,13 +44,13 @@
       <img alt="Last commit date" src="https://img.shields.io/github/last-commit/ProfessorManhattan/packer-fedora-desktop?logo=git&logoColor=white&style=flat" />
     </a>
     <a href="https://megabyte.space/docs/packer" target="_blank">
-      <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?logo=readthedocs&style=flat" />
+      <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg?style=flat" />
     </a>
     <a href="https://gitlab.com/megabyte-labs/packer/fedora-desktop/-/raw/master/LICENSE" target="_blank">
-      <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg?style=flat" />
+      <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-yellow.svg?style=flat" />
     </a>
-    <a href="profile.opencollective" title="Support us on Open Collective" target="_blank">
-      <img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/megabytelabs?label=Open%20Collective%20sponsors&logo=opencollective&style=flat" />
+    <a href="https://opencollective.com/megabytelabs" title="Support us on Open Collective" target="_blank">
+      <img alt="Open Collective sponsors" src="https://img.shields.io/opencollective/sponsors/megabytelabs?label=Open%20Collective%20sponsors&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAElBMVEUAAACvzfmFsft4pfD////w+P9tuc5RAAAABHRSTlMAFBERkdVu1AAAAFxJREFUKM9jgAAXIGBAABYXMHBA4yNEXGBAAU2BMz4FIIYTNhtFgRjZPkagFAuyAhGgHAuKAlQBCBtZB4gzQALoDsN0Oobn0L2PEUCoQYgZyOjRQFiJA67IRrEbAJImNwFBySjCAAAAAElFTkSuQmCC&style=flat" />
     </a>
     <a href="https://github.com/ProfessorManhattan" title="Support us on GitHub" target="_blank">
       <img alt="GitHub sponsors" src="https://img.shields.io/github/sponsors/ProfessorManhattan?label=GitHub%20sponsors&logo=github&style=flat" />
@@ -60,7 +64,7 @@
   </p>
 </div>
 
-> </br><h3 align="center">**A Fedora 34 Workstation Packer project based on chefbento's Fedora settings**</h3></br>
+> </br><h3 align="center">**A Fedora Workstation Packer project based on chef-bento's Fedora Server settings**</h3></br>
 
 <!--TERMINALIZER![terminalizer_title](https://gitlab.com/megabyte-labs/ansible-roles/role_name/-/raw/master/.demo.gif)TERMINALIZER-->
 

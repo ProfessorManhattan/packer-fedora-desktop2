@@ -1,4 +1,8 @@
 {
   "badge_style": "flat",
-  "slug": "fedora-desktop"
+  "description_template": "Fedora Workstation MAJOR_VERSION",
+  "description_template_package": "A Fedora Workstation MAJOR_VERSION Packer project based on chef bento's Fedora Server settings with the addition of a GUI/Plymouth",
+  "hostname": "vagrant-fedora",
+  "slug": "fedora-desktop",
+  "vagrant_tag": "fedora"
 }
