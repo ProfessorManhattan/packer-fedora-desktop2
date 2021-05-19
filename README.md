@@ -64,7 +64,7 @@
   </p>
 </div>
 
-> </br><h3 align="center">**A Fedora Workstation 34 Packer project based on chef bento's Fedora Server settings with the addition of a GUIPlymouth**</h3></br>
+> </br><h3 align="center">**A Fedora Workstation 34 Packer project based on chef bento's Fedora Server settings (with the addition of the desktop GUI)**</h3></br>
 
 <!--TERMINALIZER![terminalizer_title](https://gitlab.com/megabyte-labs/ansible-roles/role_name/-/raw/master/.demo.gif)TERMINALIZER-->
 
