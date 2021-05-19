@@ -1,7 +1,7 @@
 {
   "name": "@megabytelabs/packer-fedora-desktop",
   "version": "1.0.0",
-  "description": "A Fedora Workstation 34 Packer project based on chef bento's Fedora Server settings with the addition of a GUI/Plymouth",
+  "description": "A Fedora Workstation 34 Packer project based on chef bento's Fedora Server settings (with the addition of the desktop GUI)",
   "license": "MIT",
   "author": "Brian Zalewski <brian@megabyte.space> (https://megabyte.space)",
   "scripts": {

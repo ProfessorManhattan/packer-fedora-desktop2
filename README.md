@@ -1,7 +1,7 @@
-<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-readme.md" ⚠️-->\<div align="center">
+<!-- ⚠️ This README has been generated from the file(s) "./.modules/docs/blueprint-readme.md" ⚠️--><div align="center">
   <center>
-    <a href="https://gitlab.com/megabyte-labs/packer/fedora-desktop" title="{{ variables.description GitLab page" target="_blank">
-      <img width="140" height="140" alt="Fedora Workstation 34 logo" src="./logo.png" />
+    <a href="https://gitlab.com/megabyte-labs/packer/fedora-desktop" title="Fedora Workstation 34 GitLab page" target="_blank">
+      <img width="100" height="100" alt="Fedora Workstation 34 logo" src="./logo.png" />
     </a>
   </center>
 </div>
@@ -64,7 +64,7 @@
   </p>
 </div>
 
-> </br><h3 align="center">**A Fedora Workstation Packer project based on chef-bento's Fedora Server settings**</h3></br>
+> </br><h3 align="center">**A Fedora Workstation 34 Packer project based on chef bento's Fedora Server settings with the addition of a GUIPlymouth**</h3></br>
 
 <!--TERMINALIZER![terminalizer_title](https://gitlab.com/megabyte-labs/ansible-roles/role_name/-/raw/master/.demo.gif)TERMINALIZER-->
 
