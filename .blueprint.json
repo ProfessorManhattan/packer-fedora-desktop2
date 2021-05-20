@@ -4,5 +4,6 @@
   "description_template_package": "A Fedora Workstation MAJOR_VERSION Packer project based on chef bento's Fedora Server settings (with the addition of the desktop GUI)",
   "hostname": "vagrant-fedora",
   "slug": "fedora-desktop",
-  "vagrant_tag": "fedora"
+  "vagrant_tag": "fedora",
+  "version_description": "A compact Fedora Workstation ISO_VERSION box. Built from the Fedora Server ISO_VERSION image. See https://gitlab.com/megabyte-labs/packer/fedora-desktop for more details."
 }
