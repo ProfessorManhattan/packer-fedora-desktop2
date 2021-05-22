@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :fedora do |fedora|
     fedora.vm.box="Megabyte/Fedora-Desktop"
     fedora.vm.hostname = "vagrant-fedora"
-    fedora.vm.name = "Fedora Workstation 34"
+    #fedora.vm.name = "Fedora Workstation 34" TODO: Figure out how to set name globally if possible
     fedora.vm.network :forwarded_port, guest: 22, host: 58022, id: "ssh", auto_correct: true
     fedora.vm.network :forwarded_port, guest: 3389, host: 53389, id: "rdp", auto_correct: true
     fedora.vm.network :forwarded_port, guest: 443, host: 58443, id: "https", auto_correct: true
