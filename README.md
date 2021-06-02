@@ -58,13 +58,13 @@
     <a href="https://github.com/ProfessorManhattan" target="_blank">
       <img alt="GitHub: ProfessorManhattan" src="https://img.shields.io/github/followers/ProfessorManhattan?style=social" target="_blank" />
     </a>
-    <a href="https://twitter.com/PrfssrManhattan" target="_blank">
-      <img alt="Twitter: PrfssrManhattan" src="https://img.shields.io/twitter/url/https/twitter.com/PrfssrManhattan.svg?style=social&label=Follow%20%40PrfssrManhattan" />
+    <a href="https://twitter.com/MegabyteLabs" target="_blank">
+      <img alt="Twitter: MegabyteLabs" src="https://img.shields.io/twitter/url/https/twitter.com/MegabyteLabs.svg?style=social&label=Follow%20%40MegabyteLabs" />
     </a>
   </p>
 </div>
 
-> </br><h3 align="center">**A Fedora Workstation 34 Packer project based on chef bento's Fedora Server settings (with the addition of the desktop GUI)**</h3></br>
+> </br><h3 align="center">**An automated Fedora Workstation (currently, version 34.1) Packer project that builds boxes using the latest Fedora Server release**</h3></br>
 
 <!--TERMINALIZER![terminalizer_title](https://gitlab.com/megabyte-labs/ansible-roles/role_name/-/raw/master/.demo.gif)TERMINALIZER-->
 
