@@ -162,7 +162,6 @@
         "scripts/fix-slow-dns.symlink.sh",
         "scripts/build-tools.symlink.sh",
         "scripts/install-supporting-packages.symlink.sh",
-        "scripts/motd.symlink.sh",
         "scripts/sshd.symlink.sh",
         "scripts/virtualbox.symlink.sh",
         "scripts/vmware.symlink.sh",
