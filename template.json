@@ -20,8 +20,6 @@
     "latestos_tag": "fedora",
     "memory": "2048",
     "no_proxy": "{{ env `NO_PROXY` }}",
-    "qemuargs_opt": "-m",
-    "qemuargs_value": "1024M",
     "shutdown_command": "echo '{{ user `ssh_password` }}' | sudo -S shutdown -P now",
     "ssh_password": "vagrant",
     "ssh_port": "22",
@@ -161,18 +159,18 @@
       "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S bash '{{ .Path }}'",
       "expect_disconnect": true,
       "scripts": [
-        "scripts/fix-slow-dns.sh",
-        "scripts/build-tools.sh",
-        "scripts/install-supporting-packages.sh",
-        "scripts/motd.sh",
-        "scripts/sshd.sh",
-        "scripts/virtualbox.sh",
-        "scripts/vmware.sh",
-        "scripts/parallels.sh",
-        "scripts/vagrant.sh",
-        "scripts/real-tmp.sh",
+        "scripts/fix-slow-dns.symlink.sh",
+        "scripts/build-tools.symlink.sh",
+        "scripts/install-supporting-packages.symlink.sh",
+        "scripts/motd.symlink.sh",
+        "scripts/sshd.symlink.sh",
+        "scripts/virtualbox.symlink.sh",
+        "scripts/vmware.symlink.sh",
+        "scripts/parallels.symlink.sh",
+        "scripts/vagrant.symlink.sh",
+        "scripts/real-tmp.symlink.sh",
         "scripts/desktop.custom.sh",
-        "scripts/cleanup.sh"
+        "scripts/cleanup.symlink.sh"
       ],
       "type": "shell"
     }
