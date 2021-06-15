@@ -1,4 +1,153 @@
 {
+  "builders": [
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_os_type": "fedora-core",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-Parallels",
+      "parallels_tools_flavor": "lin",
+      "prlctl_version_file": ".prlctl_version",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "parallels-iso",
+      "vm_name": "{{ user `vm_name` }}"
+    },
+    {
+      "accelerator": "kvm",
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_cache": "unsafe",
+      "disk_compression": true,
+      "disk_discard": "unmap",
+      "disk_interface": "virtio-scsi",
+      "disk_size": "{{ user `disk_size` }}",
+      "format": "qcow2",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "net_device": "virtio-net",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-KVM",
+      "qemuargs": [
+        [
+          "-m",
+          "2048M"
+        ]
+      ],
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "qemu",
+      "vm_name": "{{ user `vm_name` }}"
+    },
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_additions_path": "VBoxGuestAdditions_{{ .Version }}.iso",
+      "guest_additions_url": "{{ user `guest_additions_url` }}",
+      "guest_os_type": "Fedora_64",
+      "hard_drive_interface": "sata",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-VirtualBox",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "type": "virtualbox-iso",
+      "virtualbox_version_file": ".vbox_version",
+      "vm_name": "{{ user `vm_name` }}"
+    },
+    {
+      "boot_command": "{{ user `boot_command` }}",
+      "boot_wait": "{{ user `boot_wait` }}",
+      "cpus": "{{ user `cpus` }}",
+      "disk_size": "{{ user `disk_size` }}",
+      "guest_os_type": "fedora-64",
+      "headless": "{{ user `headless` }}",
+      "http_directory": "{{ user `http_directory` }}",
+      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "memory": "{{ user `memory` }}",
+      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-VMWare",
+      "shutdown_command": "{{ user `shutdown_command` }}",
+      "ssh_password": "{{ user `ssh_password` }}",
+      "ssh_port": "{{ user `ssh_port` }}",
+      "ssh_timeout": "{{ user `ssh_timeout` }}",
+      "ssh_username": "{{ user `ssh_username` }}",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "version": "11",
+      "vm_name": "{{ user `vm_name` }}",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "ethernet0.pciSlotNumber": "32"
+      },
+      "vmx_remove_ethernet_interfaces": true
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "compression_level": "{{ user `compression_level` }}",
+        "output": "{{ user `build_directory` }}/{{ user `box_basename` }}.{{ .Provider }}.box",
+        "type": "vagrant",
+        "vagrantfile_template": "{{ template_dir }}/Vagrantfile"
+      },
+      {
+        "access_token": "{{ user `vagrantup_token` }}",
+        "box_tag": "{{ user `vagrantup_user` }}/{{ user `box_basename` }}",
+        "type": "vagrant-cloud",
+        "version": "{{ user `iso_version` }}",
+        "version_description": "{{ user `version_description` }}"
+      }
+    ]
+  ],
+  "provisioners": [
+    {
+      "environment_vars": [
+        "HOME_DIR=/home/vagrant",
+        "HTTP_PROXY={{ user `http_proxy` }}",
+        "HTTPS_PROXY={{ user `https_proxy` }}",
+        "NO_PROXY={{ user `no_proxy` }}"
+      ],
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S bash '{{ .Path }}'",
+      "expect_disconnect": true,
+      "scripts": [
+        "scripts/fix-slow-dns.symlink.sh",
+        "scripts/build-tools.symlink.sh",
+        "scripts/install-supporting-packages.symlink.sh",
+        "scripts/sshd.symlink.sh",
+        "scripts/virtualbox.symlink.sh",
+        "scripts/vmware.symlink.sh",
+        "scripts/parallels.symlink.sh",
+        "scripts/vagrant.symlink.sh",
+        "scripts/real-tmp.symlink.sh",
+        "scripts/desktop.custom.sh",
+        "scripts/cleanup.symlink.sh"
+      ],
+      "type": "shell"
+    }
+  ],
   "variables": {
     "boot_command": "<up><wait><tab> inst.text inst.ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/{{ user `kickstarter_path` }}<enter><wait>",
     "boot_wait": "5s",
@@ -29,149 +178,6 @@
     "vagrantup_user": "Megabyte",
     "version_description": "A compact Fedora Workstation 34.1.2 box. Built from the Fedora Server 34.1.2 image. See https://gitlab.com/megabyte-labs/packer/fedora-desktop for more details.",
     "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
-  },
-  "builders": [
-    {
-      "type": "parallels-iso",
-      "boot_command": "{{ user `boot_command` }}",
-      "boot_wait": "{{ user `boot_wait` }}",
-      "cpus": "{{ user `cpus` }}",
-      "disk_size": "{{ user `disk_size` }}",
-      "guest_os_type": "fedora-core",
-      "http_directory": "{{ user `http_directory` }}",
-      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
-      "iso_url": "{{ user `iso_url` }}",
-      "memory": "{{ user `memory` }}",
-      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-Parallels",
-      "parallels_tools_flavor": "lin",
-      "prlctl_version_file": ".prlctl_version",
-      "shutdown_command": "{{ user `shutdown_command` }}",
-      "ssh_password": "{{ user `ssh_password` }}",
-      "ssh_port": "{{ user `ssh_port` }}",
-      "ssh_timeout": "{{ user `ssh_timeout` }}",
-      "ssh_username": "{{ user `ssh_username` }}",
-      "vm_name": "{{ user `vm_name` }}"
-    },
-    {
-      "type": "qemu",
-      "accelerator": "kvm",
-      "boot_command": "{{ user `boot_command` }}",
-      "boot_wait": "{{ user `boot_wait` }}",
-      "cpus": "{{ user `cpus` }}",
-      "disk_cache": "unsafe",
-      "disk_compression": true,
-      "disk_discard": "unmap",
-      "disk_interface": "virtio-scsi",
-      "disk_size": "{{ user `disk_size` }}",
-      "format": "qcow2",
-      "headless": "{{ user `headless` }}",
-      "http_directory": "{{ user `http_directory` }}",
-      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
-      "iso_url": "{{ user `iso_url` }}",
-      "memory": "{{ user `memory` }}",
-      "net_device": "virtio-net",
-      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-KVM",
-      "qemuargs": [["-m", "2048M"]],
-      "shutdown_command": "{{ user `shutdown_command` }}",
-      "ssh_password": "{{ user `ssh_password` }}",
-      "ssh_port": "{{ user `ssh_port` }}",
-      "ssh_timeout": "{{ user `ssh_timeout` }}",
-      "ssh_username": "{{ user `ssh_username` }}",
-      "vm_name": "{{ user `vm_name` }}"
-    },
-    {
-      "type": "virtualbox-iso",
-      "boot_command": "{{ user `boot_command` }}",
-      "boot_wait": "{{ user `boot_wait` }}",
-      "cpus": "{{ user `cpus` }}",
-      "disk_size": "{{ user `disk_size` }}",
-      "guest_additions_path": "VBoxGuestAdditions_{{ .Version }}.iso",
-      "guest_additions_url": "{{ user `guest_additions_url` }}",
-      "guest_os_type": "Fedora_64",
-      "hard_drive_interface": "sata",
-      "headless": "{{ user `headless` }}",
-      "http_directory": "{{ user `http_directory` }}",
-      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
-      "iso_url": "{{ user `iso_url` }}",
-      "memory": "{{ user `memory` }}",
-      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-VirtualBox",
-      "shutdown_command": "{{ user `shutdown_command` }}",
-      "ssh_password": "{{ user `ssh_password` }}",
-      "ssh_port": "{{ user `ssh_port` }}",
-      "ssh_timeout": "{{ user `ssh_timeout` }}",
-      "ssh_username": "{{ user `ssh_username` }}",
-      "virtualbox_version_file": ".vbox_version",
-      "vm_name": "{{ user `vm_name` }}"
-    },
-    {
-      "type": "vmware-iso",
-      "boot_command": "{{ user `boot_command` }}",
-      "boot_wait": "{{ user `boot_wait` }}",
-      "cpus": "{{ user `cpus` }}",
-      "disk_size": "{{ user `disk_size` }}",
-      "guest_os_type": "fedora-64",
-      "headless": "{{ user `headless` }}",
-      "http_directory": "{{ user `http_directory` }}",
-      "iso_checksum": "file:{{ user `iso_checksum_url` }}",
-      "iso_url": "{{ user `iso_url` }}",
-      "memory": "{{ user `memory` }}",
-      "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-VMWare",
-      "shutdown_command": "{{ user `shutdown_command` }}",
-      "ssh_password": "{{ user `ssh_password` }}",
-      "ssh_port": "{{ user `ssh_port` }}",
-      "ssh_timeout": "{{ user `ssh_timeout` }}",
-      "ssh_username": "{{ user `ssh_username` }}",
-      "tools_upload_flavor": "linux",
-      "version": "11",
-      "vm_name": "{{ user `vm_name` }}",
-      "vmx_data": {
-        "cpuid.coresPerSocket": "1",
-        "ethernet0.pciSlotNumber": "32"
-      },
-      "vmx_remove_ethernet_interfaces": true
-    }
-  ],
-  "post-processors": [
-    [
-      {
-        "type": "vagrant",
-        "compression_level": "{{ user `compression_level` }}",
-        "output": "{{ user `build_directory` }}/{{ user `box_basename` }}.{{ .Provider }}.box",
-        "vagrantfile_template": "{{ template_dir }}/Vagrantfile"
-      },
-      {
-        "type": "vagrant-cloud",
-        "access_token": "{{ user `vagrantup_token` }}",
-        "box_tag": "{{ user `vagrantup_user` }}/{{ user `box_basename` }}",
-        "version_description": "{{ user `version_description` }}",
-        "version": "{{ user `iso_version` }}"
-      }
-    ]
-  ],
-  "provisioners": [
-    {
-      "environment_vars": [
-        "HOME_DIR=/home/vagrant",
-        "HTTP_PROXY={{ user `http_proxy` }}",
-        "HTTPS_PROXY={{ user `https_proxy` }}",
-        "NO_PROXY={{ user `no_proxy` }}"
-      ],
-      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S bash '{{ .Path }}'",
-      "expect_disconnect": true,
-      "scripts": [
-        "scripts/fix-slow-dns.symlink.sh",
-        "scripts/build-tools.symlink.sh",
-        "scripts/install-supporting-packages.symlink.sh",
-        "scripts/sshd.symlink.sh",
-        "scripts/virtualbox.symlink.sh",
-        "scripts/vmware.symlink.sh",
-        "scripts/parallels.symlink.sh",
-        "scripts/vagrant.symlink.sh",
-        "scripts/real-tmp.symlink.sh",
-        "scripts/desktop.custom.sh",
-        "scripts/cleanup.symlink.sh"
-      ],
-      "type": "shell"
-    }
-  ]
+  }
 }
+
