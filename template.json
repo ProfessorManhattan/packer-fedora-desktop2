@@ -39,12 +39,7 @@
       "memory": "{{ user `memory` }}",
       "net_device": "virtio-net",
       "output_directory": "{{ user `build_directory` }}/{{ user `box_basename` }}-{{ user `iso_version` }}-KVM",
-      "qemuargs": [
-        [
-          "-m",
-          "2048M"
-        ]
-      ],
+      "qemuargs": [["-m", "2048M"]],
       "shutdown_command": "{{ user `shutdown_command` }}",
       "ssh_password": "{{ user `ssh_password` }}",
       "ssh_port": "{{ user `ssh_port` }}",
@@ -180,4 +175,3 @@
     "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
   }
 }
-
