@@ -150,7 +150,7 @@
     "build_directory": "build",
     "compression_level": "9",
     "cpus": "2",
-    "description": "Fedora Workstation MAJOR_VERSION",
+    "description": "Fedora Workstation 35",
     "disk_size": "80000",
     "guest_additions_url": "",
     "headless": "false",
@@ -171,7 +171,7 @@
     "ssh_username": "vagrant",
     "vagrantup_token": "{{ env `VAGRANT_CLOUD_TOKEN` }}",
     "vagrantup_user": "Megabyte",
-    "version_description": "A Fedora Workstation ISO_VERSION box. Built from the Fedora Server ISO_VERSION image. See https://github.com/megabyte-labs/packer-fedora-desktop for more details.",
+    "version_description": "A Fedora Workstation 35.1.2 box. Built from the Fedora Server 35.1.2 image. See https://github.com/megabyte-labs/packer-fedora-desktop for more details.",
     "vm_name": "{{ user `box_basename` }}-{{ user `iso_version` }}"
   }
 }
