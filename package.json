@@ -75,7 +75,7 @@
     "node": ">=14.18.0"
   },
   "publishConfig": {
-    "@gitlab:registry": "https://gitlab.com/api/v4/projects//packages/npm/",
+    "@gitlab:registry": "https://gitlab.com/api/v4/projects/24081497/packages/npm/",
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "tag": "edge"
@@ -83,6 +83,9 @@
   "blueprint": {
     "description": "An automated Fedora Workstation Packer project that builds images with the latest Fedora Server release and along with scripts that upgrade it to the Workstation edition",
     "description_template": "Fedora Workstation MAJOR_VERSION",
+    "github_id": "R_kgDOHKF18Q",
+    "gitlab_group_id": "10839950",
+    "gitlab_project_id": "24081497",
     "group": "packer",
     "hostname": "vagrant-fedora",
     "name": "Fedora Workstation",
@@ -95,10 +98,7 @@
     "subgroup": "desktop",
     "title": "Fedora Workstation Template for Packer",
     "vagrant_tag": "fedora",
-    "version_description": "A Fedora Workstation ISO_VERSION box. Built from the Fedora Server ISO_VERSION image. See https://github.com/megabyte-labs/packer-fedora-desktop for more details.",
-    "github_id": "R_kgDOHKF18Q",
-    "gitlab_project_id": "24081497",
-    "gitlab_group_id": "10839950"
+    "version_description": "A Fedora Workstation ISO_VERSION box. Built from the Fedora Server ISO_VERSION image. See https://github.com/megabyte-labs/packer-fedora-desktop for more details."
   },
   "changelog": {
     "displayTypes": [
