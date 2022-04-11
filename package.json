@@ -83,7 +83,6 @@
   "blueprint": {
     "description": "An automated Fedora Workstation Packer project that builds images starting with the latest Fedora Server release and then converts it to a full-fledged Fedora Workstation version",
     "description_template": "Fedora Workstation MAJOR_VERSION",
-    "description_template_package": "An automated Fedora Workstation (currently, version MAJOR_VERSION.MINOR_VERSION) Packer project that builds boxes using the latest Fedora Server release",
     "group": "packer",
     "hostname": "vagrant-fedora",
     "name": "Fedora Workstation",
