@@ -93,7 +93,7 @@ vars:
       fi
   PYTHON_VIRTUALENV: true
   REPOSITORY_SUBTYPE: desktop
-  REPOSITORY_TYPE: misc
+  REPOSITORY_TYPE: packer
   SEMANTIC_CONFIG: semantic-release-config
   TIMEZONE: America/New_York
   includes:
