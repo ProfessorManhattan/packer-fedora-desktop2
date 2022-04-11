@@ -1,5 +1,6 @@
-FROM scratch
+FROM scratch AS binary
 
-ENTRYPOINT ["/task"]
+ENTRYPOINT ["/"]
+CMD ["--version"]
 
-COPY task /
+COPY  /
