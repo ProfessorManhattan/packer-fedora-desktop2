@@ -42,6 +42,24 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "blueprint": {
+      "description": "An automated Fedora Workstation Packer project that builds images starting with the latest Fedora Server release and then converts it to a full-fledged Fedora Workstation version",
+      "description_template": "Fedora Workstation MAJOR_VERSION",
+      "description_template_package": "An automated Fedora Workstation (currently, version MAJOR_VERSION.MINOR_VERSION) Packer project that builds boxes using the latest Fedora Server release",
+      "overview": "This project houses configurations that can be used to build performant [Fedora Workstation](https://getfedora.org/en/workstation/) images. It uses a Fedora Server image as a base, uses Packer to automate the build process, and then sets the image up using some [Bento scripts](https://github.com/chef/bento/tree/main/packer_templates/ubuntu/scripts) which take care of optimizing the image for your system (i.e. setting up SSH with the Vagrant default public key, setting up GuestAdditions for VirtualBox, etc.). This project is intended to be used to create desktop images that you would launch from your main desktop using a GUI. If you are looking for headless images, you should either use [Bento's server images](https://app.vagrantup.com/bento). You might also have some luck browsing through our [Packer projects](https://gitlab.com/megabyte-labs/packer).",
+      "hostname": "vagrant-fedora",
+      "group": "packer",
+      "name": "Fedora Workstation",
+      "repository": {
+        "github": "https://github.com/megabyte-labs/packer-fedora-desktop",
+        "gitlab": "https://gitlab.com/megabyte-labs/packer/fedora-desktop"
+      },
+      "slug": "fedora-desktop",
+      "subgroup": "desktop",
+      "title": "Fedora Workstation Template for Packer",
+      "vagrant_tag": "fedora",
+      "version_description": "A Fedora Workstation ISO_VERSION box. Built from the Fedora Server ISO_VERSION image. See https://github.com/megabyte-labs/packer-fedora-desktop for more details."
+  },
   "devDependencies": {
     "@megabytelabs/prettier-config": "^1.2.893",
     "consola": "^2.15.3",

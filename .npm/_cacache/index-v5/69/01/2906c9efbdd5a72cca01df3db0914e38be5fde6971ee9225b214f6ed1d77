@@ -1,2 +1,0 @@
-
-0bb03247cf383c8394a82691ef70a050508bcdf4	{"key":"make-fetch-happen:request-cache:https://registry.npmjs.org/map-obj/-/map-obj-2.0.0.tgz","integrity":"sha1-plzSkIepJZi4eRJXpSPgISIqwfk=","time":1623738073390,"size":2082,"metadata":{"url":"https://registry.npmjs.org/map-obj/-/map-obj-2.0.0.tgz","reqHeaders":{},"resHeaders":{"cache-control":"public, immutable, max-age=31557600","content-type":"application/octet-stream","date":"Tue, 15 Jun 2021 06:21:11 GMT","etag":"\"9ec71693450f905173e878489eb03bf4\"","last-modified":"Sun, 27 May 2018 07:23:31 GMT","vary":"Accept-Encoding"}}}
