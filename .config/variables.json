@@ -10,25 +10,57 @@
   "autodoc_todo_description": "",
   "autodoc_variables_description": "",
   "badge_style": "for-the-badge",
-  "buildLdflags": "-s -w -X \"main.version={{.Version}}\" -X \"main.commit={{.Commit}}\" -X \"main.date={{.Date}}\" -X \"main.builtBy=Megabyte Labs\"",
-  "buildMain": "main.go",
   "commit_help_url": "https://megabyte.space/docs/contributing/commit-guidelines",
   "company": "Megabyte LLC",
   "copyright": "2020-2021",
   "docker_label_authors": "Brian Zalewski <brian@megabyte.space>",
   "docs": {
     "header_description_post": "<i></i>",
-    "header_description_pre": "<i></i>",
+    "header_description_pre": "Curated by ",
     "header_title_post": "<i></i>",
     "header_title_pre": "<i></i>",
-    "link": "https://megabyte.space/docs/common/go"
+    "link": "https://megabyte.space/docs/common/packer"
   },
   "email": {
     "help": "help@megabyte.space"
   },
-  "emoji_beginnings": ["🚀 ", "🔥👉 ", "👉 ", "😉 ", "🆓 ", "🐴 ", "👀 ", "🎉 ", "", "", "", "", "", "", "", ""],
-  "emoji_endings": [" 🚀", " 🔥🔥🔥", " 👏", " 😉", " 🐙", " 🐴", " 👀", " 🎟", " 🎉🎉", "", "", "", "", "", "", ""],
-  "github_prefix": "<i></i>",
+  "emoji_beginnings": [
+    "🚀 ",
+    "🔥👉 ",
+    "👉 ",
+    "😉 ",
+    "🆓 ",
+    "🐴 ",
+    "👀 ",
+    "🎉 ",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "emoji_endings": [
+    " 🚀",
+    " 🔥🔥🔥",
+    " 👏",
+    " 😉",
+    " 🐙",
+    " 🐴",
+    " 👀",
+    " 🎟",
+    " 🎉🎉",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "github_prefix": "packer-",
   "gitlab_pipelines": [
     {
       "active": true,
@@ -47,21 +79,95 @@
       "variable": {
         "REPOSITORY_UPDATE": true
       }
+    },
+    {
+      "active": true,
+      "cron": "0 5 24 * *",
+      "description": "Hyper-V Automated Build",
+      "ref": "hyperv",
+      "variable": {
+        "AUTOMATED_BUILD": true,
+        "AUTOMATED_BUILD_TYPE": "hyperv-iso"
+      }
+    },
+    {
+      "active": true,
+      "cron": "0 5 25 * *",
+      "description": "KVM/QEMU Automated Build",
+      "ref": "qemu",
+      "variable": {
+        "AUTOMATED_BUILD": true,
+        "AUTOMATED_BUILD_TYPE": "qemu"
+      }
+    },
+    {
+      "active": true,
+      "cron": "0 5 26 * *",
+      "description": "Parallels Automated Build",
+      "ref": "parallels",
+      "variable": {
+        "AUTOMATED_BUILD": true,
+        "AUTOMATED_BUILD_TYPE": "parallels-iso"
+      }
+    },
+    {
+      "active": true,
+      "cron": "0 5 27 * *",
+      "description": "VirtualBox Automated Build",
+      "ref": "virtualbox",
+      "variable": {
+        "AUTOMATED_BUILD": true,
+        "AUTOMATED_BUILD_TYPE": "virtualbox-iso"
+      }
+    },
+    {
+      "active": true,
+      "cron": "0 5 28 * *",
+      "description": "VMWare Automated Build",
+      "ref": "vmware",
+      "variable": {
+        "AUTOMATED_BUILD": true,
+        "AUTOMATED_BUILD_TYPE": "vmware-iso"
+      }
     }
   ],
-  "goBinarySystemInfo": "{{platform}}-{{arch}}",
-  "goModProxy": false,
-  "goVetFlags": "",
   "gomodProxy": true,
   "group": "common",
   "groups": {
-    "angular": ["app", "website"],
-    "ansible": ["playbook", "role"],
-    "docker": ["ansible-molecule", "app", "ci-pipeline", "codeclimate", "software"],
-    "go": ["cli", "library"],
-    "npm": ["app", "cli", "config", "library", "plugin"],
-    "packer": ["desktop", "server"],
-    "python": ["cli", "library"]
+    "angular": [
+      "app",
+      "website"
+    ],
+    "ansible": [
+      "playbook",
+      "role"
+    ],
+    "docker": [
+      "ansible-molecule",
+      "app",
+      "ci-pipeline",
+      "codeclimate",
+      "software"
+    ],
+    "go": [
+      "cli",
+      "library"
+    ],
+    "npm": [
+      "app",
+      "cli",
+      "config",
+      "library",
+      "plugin"
+    ],
+    "packer": [
+      "desktop",
+      "server"
+    ],
+    "python": [
+      "cli",
+      "library"
+    ]
   },
   "homebrew": {
     "folder": "Formula",
@@ -69,11 +175,12 @@
     "owner": "installdoc"
   },
   "idPost": "megabyte.space",
-  "json_top_keys": "",
+  "json_top_keys": "variables,type",
   "license": "MIT",
   "link": {
     "chat": "https://app.slack.com/client/T01ABCG4NK1/C01NN74H0LW/details/",
     "docs": "https://megabyte.space/docs",
+    "gitter": "https://gitter.im/megabyte-labs/community",
     "home": "https://megabyte.space",
     "installdoctor": "https://install.doctor",
     "privacy": "https://megabyte.space/privacy",
@@ -313,23 +420,22 @@
       "wrangler": "https://gitlab.com/megabyte-labs/wrangler"
     }
   },
-  "scriptsBuild": "task go:build",
+  "scriptsBuild": "task packer:build",
   "scriptsHelp": "task --menu",
   "scriptsPrepare": "npm run start && (test -f Taskfile.yml && task common:husky) || true",
   "scriptsReplaceThis": "\"",
   "scriptsReplaceWith": "\\\"",
   "scriptsStart": "bash start.sh",
-  "scriptsTest": "task go:test",
+  "scriptsTest": "task lint:packer",
   "sharp_instructions": [],
-  "slackNotificationChannel": "#go-lang",
+  "slackNotificationChannel": "#misc",
   "slackNotificationIcon": "https://gitlab.com/megabyte-labs/misc/assets/-/raw/master/logo/megabytelabs-color-icon-350x350.png",
   "slackNotificationUsername": "Megabyte Labs Release Notification Bot",
-  "snapConfinement": "classic",
   "sponsorship": {
     "author": "Brian Zalewski",
     "text": "I create open source projects out of love. Although I have a job, shelter, and as much fast food as I can handle, it would still be pretty cool to be appreciated by the community for something I have spent a lot of time and money on. Please consider sponsoring me! Who knows? Maybe I will be able to quit my job and publish open source full time."
   },
-  "subgroup": "cli",
+  "subgroup": "desktop",
   "teamsNotificationColor": "#1DA1F2",
   "teamsNotificationIcon": "https://gitlab.com/megabyte-labs/misc/assets/-/raw/master/logo/megabytelabs-color-icon-350x350.png",
   "title": "[[ package.json .blueprint.title - See CONTRIBUTING.md ]]",

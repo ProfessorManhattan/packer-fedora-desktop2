@@ -1,4 +1,4 @@
 {
   "exec": "task project:livereload",
-  "ext": "json,go,tmpl,tpl,html,yml"
+  "ext": "json,hcl"
 }

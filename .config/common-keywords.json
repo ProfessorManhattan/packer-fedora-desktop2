@@ -1,14 +1,19 @@
 {
   "keywords": [
-    "automation",
-    "cli",
-    "go",
-    "go-lang",
-    "golang",
+    "accelerated",
+    "compressed",
+    "desktop",
+    "kvm",
     "mblabs",
     "megabytelabs",
+    "optimized",
+    "packer",
+    "parallels",
     "professormanhattan",
-    "terminal",
-    "washingtondc"
+    "qemu",
+    "virtualbox",
+    "vmware",
+    "washingtondc",
+    "workstation"
   ]
 }

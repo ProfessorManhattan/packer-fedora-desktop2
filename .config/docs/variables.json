@@ -19,14 +19,14 @@
     "header_description_pre": "<i></i>",
     "header_title_post": "<i></i>",
     "header_title_pre": "<i></i>",
-    "link": "https://megabyte.space/docs/common/go"
+    "link": "https://megabyte.space/docs/common/packer"
   },
   "email": {
     "help": "help@megabyte.space"
   },
   "emoji_beginnings": ["🚀 ", "🔥👉 ", "👉 ", "😉 ", "🆓 ", "🐴 ", "👀 ", "🎉 ", "", "", "", "", "", "", "", ""],
   "emoji_endings": [" 🚀", " 🔥🔥🔥", " 👏", " 😉", " 🐙", " 🐴", " 👀", " 🎟", " 🎉🎉", "", "", "", "", "", "", ""],
-  "github_prefix": "<i></i>",
+  "github_prefix": "packer-",
   "gitlab_pipelines": [
     {
       "active": true,
@@ -55,11 +55,12 @@
     "owner": "installdoc"
   },
   "idPost": "megabyte.space",
-  "json_top_keys": "",
+  "json_top_keys": "variables,type",
   "license": "MIT",
   "link": {
     "chat": "https://app.slack.com/client/T01ABCG4NK1/C01NN74H0LW/details/",
     "docs": "https://megabyte.space/docs",
+    "gitter": "https://gitter.im/megabyte-labs/community",
     "home": "https://megabyte.space",
     "installdoctor": "https://install.doctor",
     "privacy": "https://megabyte.space/privacy",
