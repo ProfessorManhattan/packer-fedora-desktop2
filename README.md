@@ -61,7 +61,7 @@
   </a>
 </div>
 
-> </br><h4 align="center">**An automated Fedora Workstation Packer project that builds images starting with the latest Fedora Server release and then converts it to a full-fledged Fedora Workstation version**</h4></br>
+> </br><h4 align="center">**An automated Fedora Workstation Packer project that builds images with the latest Fedora Server release and along with scripts that upgrade it to the Workstation edition**</h4></br>
 
 <!--TERMINALIZER![terminalizer_title](https://gitlab.com/megabyte-labs/ansible-roles/role_name/-/raw/master/.demo.gif)TERMINALIZER-->
 
@@ -82,7 +82,7 @@
 
 ## Overview
 
-This project houses configurations that can be used to build performant [Fedora Workstation](https://getfedora.org/en/workstation/) images. It uses a Fedora Server image as a base, uses Packer to automate the build process, and then sets the image up using some [Bento scripts](https://github.com/chef/bento/tree/main/packer_templates/ubuntu/scripts) which take care of optimizing the image for your system (i.e. setting up SSH with the Vagrant default public key, setting up GuestAdditions for VirtualBox, etc.). This project is intended to be used to create desktop images that you would launch from your main desktop using a GUI. If you are looking for headless images, you should either use [Bento's server images](https://app.vagrantup.com/bento). You might also have some luck browsing through our [Packer projects](https://gitlab.com/megabyte-labs/packer).
+This project houses configurations that can be used to build performant [Fedora Workstation](https://getfedora.org/en/workstation/) images. It uses a Fedora Server image as a base, uses Packer to automate the build process, and then sets the image up using some [Bento scripts](https://github.com/chef/bento/tree/main/packer_templates/fedora/scripts) which take care of optimizing the image for your system (i.e. setting up SSH with the Vagrant default public key, setting up GuestAdditions for VirtualBox, etc.). This project is intended to be used to create desktop images that you would launch from your main desktop using a GUI. If you are looking for headless images, you should either use [Bento's server images](https://app.vagrantup.com/bento). You might also have some luck browsing through our [Packer projects](https://gitlab.com/megabyte-labs/packer).
 
 This project:
 
