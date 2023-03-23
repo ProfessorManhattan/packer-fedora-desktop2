@@ -61,7 +61,7 @@
   </a>
 </div>
 
-> </br><h4 align="center">**An automated Fedora Workstation Packer project that builds images with the latest Fedora Server release and along with scripts that upgrade it to the Workstation edition**</h4></br>
+> <br/><h4 align="center">**An automated Fedora Workstation Packer project that builds images with the latest Fedora Server release and along with scripts that upgrade it to the Workstation edition**</h4><br/>
 
 <!--TERMINALIZER![terminalizer_title](https://gitlab.com/megabyte-labs/ansible-roles/role_name/-/raw/master/.demo.gif)TERMINALIZER-->
 
